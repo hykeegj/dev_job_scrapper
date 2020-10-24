@@ -48,7 +48,7 @@ def result():
 
             db[searchKeyword] = title_list, company_list, apply_list
     except Exception as e:
-        print(f"에러 발생!! 에러 내용 : {e}")
+        print(f"런타임 에러 발생!! : {e}")
         return redirect("/")
 
     return render_template("result.html", keyword=searchKeyword, company=company_list, title=title_list, apply=apply_list, len=len, zip=zip)
