@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>검색 결과</title>
+    <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <h1>검색 결과</h1>
+      <h3>검색하신 {{keyword}} 일자리를 {{len(company)}}개 찾았습니다.</h3>
+      <h4><a href="/export?search={{keyword}}">CSV 파일로 저장</a></h4>
+      <h5><a href="/">← 홈으로 가기</a></h5>
+    </header>
+    <main>
+      {% for company, title, apply in zip(company, title, apply) %}
+      <div>
+        <h3>공고명 : {{title}}</h3>
+        <h3>회사명 : {{company}}</h3>
+        <h3><a href="{{apply}}" target="_blank">일자리 지원하러 가기</a></h3>
+        <hr />
+      </div>
+      {% endfor %}
+    </main>
+  </body>
+</html>
